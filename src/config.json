@@ -11,7 +11,7 @@
   "author": {
     "name": "sam",
     "twitterId": "@sam",
-    "avatar": "public/favicon.png"
+    "avatar": "/favicon.png"
   },
   "hero": {
     "name": "Sam",
