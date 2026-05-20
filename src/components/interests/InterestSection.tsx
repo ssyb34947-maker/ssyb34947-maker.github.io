@@ -20,7 +20,7 @@ export function InterestSection() {
       <div className="max-w-[1100px] mx-auto px-4 md:px-8">
         <HandDrawnTitle
           title="兴趣领域"
-          subtitle="探索未知，保持好奇"
+          subtitle="探索，求知"
           icon="💡"
         />
 
@@ -60,9 +60,9 @@ export function InterestSection() {
           </svg>
 
           <p className="text-center text-secondary italic relative z-10">
-            技术是我的工具，创造是我的热情，
+            技术始终都要坚持为人民服务
             <br />
-            而好奇心驱使我不断前行。
+            坚持技术是为创造好的产品
           </p>
         </motion.div>
 

@@ -31,7 +31,7 @@ export function SkillSection() {
       <div className="max-w-[1100px] mx-auto px-4 md:px-8">
         <HandDrawnTitle
           title="技术栈"
-          subtitle="我的技能武器库"
+          subtitle="技术学无止境，应用放在第一"
           icon="🛠️"
         />
 
