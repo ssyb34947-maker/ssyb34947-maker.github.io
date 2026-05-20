@@ -1,34 +1,126 @@
 ---
 import { hero, author } from '@/config.json'
 import { SocialList } from './SocialList'
-import Highlight from '@/components/Highlight.astro'
+import { HandDrawnAvatar } from './HandDrawnAvatar'
+import { HandDrawnGreeting } from './HandDrawnGreeting'
 ---
 
 <div class="lg:-mt-16 lg:h-dvh lg:min-h-[720px]">
   <div
     class="relative max-w-[1300px] mx-auto h-full px-4 grid lg:grid-cols-2 items-center justify-items-center"
   >
-    <div class="mt-[120px] lg:mt-0 max-w-[590px]">
-      <h1 class="text-3xl text-center lg:text-left text-balance">
-        Hi there, I'm <Highlight class="font-bold">{hero.name}</Highlight>👋<br />{hero.bio}
-      </h1>
-      <div class="text-sm text-secondary mt-3 text-center lg:text-left">{hero.description}</div>
-      <SocialList className="mt-[60px]" client:load />
-    </div>
-    <div class="mt-20 lg:mt-0">
-      <div
-        class="size-[200px] lg:size-[300px] rounded-full overflow-hidden border border-primary bg-zinc-100 dark:bg-zinc-800"
+    <!-- 左侧：文字介绍 -->
+    <div class="mt-[120px] lg:mt-0 max-w-[590px] relative">
+      <!-- 手绘装饰背景 -->
+      <svg
+        class="absolute -top-10 -left-10 w-32 h-32 text-accent/10 pointer-events-none"
+        viewBox="0 0 100 100"
       >
-        <img class="size-full" src={author.avatar} alt="Site owner avatar" loading="lazy" />
+        <circle
+          cx="50"
+          cy="50"
+          r="45"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-dasharray="8 4"
+          fill="none"
+        />
+      </svg>
+
+      <!-- 问候语 -->
+      <HandDrawnGreeting 
+        name={hero.name}
+        bio={hero.bio}
+        client:load
+      />
+
+      <!-- 描述文字 -->
+      <div class="relative mt-4 text-sm text-secondary text-center lg:text-left">
+        <svg
+          class="absolute -left-4 top-0 w-2 h-full text-accent/30"
+          viewBox="0 0 4 100"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M2 0 L2 100"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-dasharray="4 2"
+          />
+        </svg>
+        {hero.description}
       </div>
+
+      <!-- 社交链接 -->
+      <div class="relative mt-[60px]">
+        <SocialList className="justify-center lg:justify-start" client:load />
+      </div>
+
+      <!-- 手绘装饰星星 -->
+      <svg
+        class="absolute -bottom-4 -right-4 w-16 h-16 text-accent/20 pointer-events-none"
+        viewBox="0 0 64 64"
+      >
+        <path
+          d="M32 4 L36 24 L56 24 L40 36 L48 56 L32 44 L16 56 L24 36 L8 24 L28 24 Z"
+          stroke="currentColor"
+          stroke-width="2"
+          fill="none"
+          stroke-linejoin="round"
+        />
+      </svg>
     </div>
 
-    <div class="mt-10 lg:mt-0 lg:absolute inset-x-0 bottom-0 flex flex-col items-center">
-      <p class="text-xs text-center text-balance text-secondary">
-        {hero.yiyan}
-      </p>
-      <div class="mt-7 text-xl animate-bounce">
-        <i class="iconfont icon-down"></i>
+    <!-- 右侧：头像 -->
+    <div class="mt-20 lg:mt-0 relative">
+      <HandDrawnAvatar 
+        src={author.avatar}
+        alt="Site owner avatar"
+        client:load
+      />
+    </div>
+
+    <!-- 底部：一言 -->
+    <div class="mt-10 lg:mt-0 lg:absolute inset-x-0 bottom-0 flex flex-col items-center pb-8">
+      <div class="relative">
+        <!-- 手绘对话框 -->
+        <svg
+          class="absolute -inset-4 w-[calc(100%+32px)] h-[calc(100%+32px)] text-accent/10"
+          viewBox="0 0 200 60"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M10 30 C10 10 30 5 100 5 C170 5 190 10 190 30 C190 50 170 55 100 55 C70 55 50 50 40 58 L30 50 C20 55 10 50 10 30 Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-dasharray="6 3"
+            fill="none"
+          />
+        </svg>
+        <p class="text-xs text-center text-balance text-secondary relative px-4">
+          {hero.yiyan}
+        </p>
+      </div>
+      
+      <!-- 向下滚动提示 -->
+      <div class="mt-6 relative">
+        <svg
+          class="absolute -inset-2 w-[calc(100%+16px)] h-[calc(100%+16px)] text-accent/20"
+          viewBox="0 0 40 40"
+        >
+          <circle
+            cx="20"
+            cy="20"
+            r="16"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-dasharray="4 2"
+            fill="none"
+          />
+        </svg>
+        <div class="text-xl animate-bounce relative">
+          <i class="iconfont icon-down text-accent"></i>
+        </div>
       </div>
     </div>
   </div>
