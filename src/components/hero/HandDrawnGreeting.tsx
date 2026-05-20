@@ -18,7 +18,7 @@ export function HandDrawnGreeting({ name, bio }: HandDrawnGreetingProps) {
         <span className="inline-flex items-center gap-2 flex-wrap justify-center lg:justify-start">
           {/* Hi there 带手绘效果 */}
           <span className="relative inline-block">
-            <span>Hi there</span>
+            <span>你好呀！</span>
             <motion.svg
               className="absolute -bottom-1 left-0 w-full h-3 text-accent"
               viewBox="0 0 100 12"
@@ -37,7 +37,7 @@ export function HandDrawnGreeting({ name, bio }: HandDrawnGreetingProps) {
             </motion.svg>
           </span>
           
-          <span>, I'm</span>
+          <span>, 我是</span>
           
           {/* 名字带手绘高亮 */}
           <span className="relative inline-block font-bold">
