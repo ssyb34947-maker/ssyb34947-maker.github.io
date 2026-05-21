@@ -31,6 +31,6 @@ comments: false
 
 ## 说明
 
-我的产品：可见顶部的 <a href="/products">产品</a>。
+我的产品：可见顶部的 <a href="/projects">产品</a>。
 
 我的博客：可见顶部的 <a href="/archives">博客</a>。
