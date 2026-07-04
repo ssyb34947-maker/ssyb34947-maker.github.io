@@ -36,9 +36,9 @@ export function HandDrawnGreeting({ name, bio }: HandDrawnGreetingProps) {
               />
             </motion.svg>
           </span>
-          
+
           <span>, 我是</span>
-          
+
           {/* 名字带手绘高亮 */}
           <span className="relative inline-block font-bold">
             <span className="relative z-10">{name}</span>
@@ -71,7 +71,7 @@ export function HandDrawnGreeting({ name, bio }: HandDrawnGreetingProps) {
               />
             </svg>
           </span>
-          
+
           {/* 挥手动画 */}
           <motion.span
             className="inline-block text-2xl"
@@ -99,7 +99,9 @@ export function HandDrawnGreeting({ name, bio }: HandDrawnGreetingProps) {
           {/* 手绘引号装饰 */}
           <span className="absolute -left-4 -top-2 text-2xl text-accent/30 font-serif">"</span>
           <span className="text-lg text-primary">{bio}</span>
-          <span className="absolute -right-4 -bottom-2 text-2xl text-accent/30 font-serif rotate-180">"</span>
+          <span className="absolute -right-4 -bottom-2 text-2xl text-accent/30 font-serif rotate-180">
+            "
+          </span>
         </div>
       </motion.div>
     </div>

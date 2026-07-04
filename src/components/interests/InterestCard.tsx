@@ -31,10 +31,10 @@ export function InterestCard({ interest, index }: InterestCardProps) {
       whileInView="visible"
       viewport={{ once: true }}
       custom={index}
-      whileHover={{ 
-        scale: 1.05, 
+      whileHover={{
+        scale: 1.05,
         rotate: 0,
-        transition: { duration: 0.2 }
+        transition: { duration: 0.2 },
       }}
     >
       <div
@@ -46,7 +46,7 @@ export function InterestCard({ interest, index }: InterestCardProps) {
         }}
       >
         {/* 手绘装饰角标 */}
-        <div 
+        <div
           className="absolute -top-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center text-lg"
           style={{ backgroundColor: interest.color }}
         >
@@ -54,27 +54,24 @@ export function InterestCard({ interest, index }: InterestCardProps) {
         </div>
 
         {/* 手绘胶带效果 */}
-        <div 
+        <div
           className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 opacity-60"
           style={{
             backgroundColor: interest.color,
             transform: 'translateX(-50%) rotate(-2deg)',
-            maskImage: 'repeating-linear-gradient(90deg, black 0px, black 8px, transparent 8px, transparent 12px)',
-            WebkitMaskImage: 'repeating-linear-gradient(90deg, black 0px, black 8px, transparent 8px, transparent 12px)',
+            maskImage:
+              'repeating-linear-gradient(90deg, black 0px, black 8px, transparent 8px, transparent 12px)',
+            WebkitMaskImage:
+              'repeating-linear-gradient(90deg, black 0px, black 8px, transparent 8px, transparent 12px)',
           }}
         />
 
         <div className="pt-2">
-          <h3 
-            className="text-lg font-bold mb-2"
-            style={{ color: interest.color }}
-          >
+          <h3 className="text-lg font-bold mb-2" style={{ color: interest.color }}>
             {interest.title}
           </h3>
-          
-          <p className="text-sm text-secondary mb-4 line-clamp-2">
-            {interest.description}
-          </p>
+
+          <p className="text-sm text-secondary mb-4 line-clamp-2">{interest.description}</p>
 
           {/* 标签 */}
           <div className="flex flex-wrap gap-2">

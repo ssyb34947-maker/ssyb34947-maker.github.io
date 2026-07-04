@@ -18,11 +18,7 @@ export function InterestSection() {
   return (
     <section className="py-16 bg-secondary/30">
       <div className="max-w-[1100px] mx-auto px-4 md:px-8">
-        <HandDrawnTitle
-          title="兴趣领域"
-          subtitle="探索，求知"
-          icon="💡"
-        />
+        <HandDrawnTitle title="兴趣领域" subtitle="探索，求知" icon="💡" />
 
         {/* 手绘风格引言 */}
         <motion.div
@@ -34,8 +30,10 @@ export function InterestSection() {
         >
           {/* 手绘引号 */}
           <div className="absolute top-0 left-2 text-6xl text-accent/20 font-serif">"</div>
-          <div className="absolute bottom-0 right-2 text-6xl text-accent/20 font-serif rotate-180">"</div>
-          
+          <div className="absolute bottom-0 right-2 text-6xl text-accent/20 font-serif rotate-180">
+            "
+          </div>
+
           {/* 手绘边框 */}
           <svg
             className="absolute inset-0 w-full h-full text-accent/30 pointer-events-none"

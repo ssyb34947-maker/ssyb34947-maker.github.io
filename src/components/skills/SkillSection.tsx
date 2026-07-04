@@ -29,11 +29,7 @@ export function SkillSection() {
   return (
     <section className="py-16">
       <div className="max-w-[1100px] mx-auto px-4 md:px-8">
-        <HandDrawnTitle
-          title="技术栈"
-          subtitle="技术学无止境，应用放在第一"
-          icon="🛠️"
-        />
+        <HandDrawnTitle title="技术栈" subtitle="技术学无止境，应用放在第一" icon="🛠️" />
 
         <motion.div
           className="space-y-10"
@@ -43,11 +39,7 @@ export function SkillSection() {
           viewport={{ once: true, margin: '-100px' }}
         >
           {skillCategories.map((category) => (
-            <motion.div
-              key={category.title}
-              variants={categoryVariants}
-              className="relative"
-            >
+            <motion.div key={category.title} variants={categoryVariants} className="relative">
               {/* 手绘风格的分类标题 */}
               <div className="flex items-center gap-3 mb-4">
                 <div className="relative">

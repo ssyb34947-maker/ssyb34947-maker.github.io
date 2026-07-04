@@ -1,7 +1,7 @@
 ---
 import { hero, author } from '@/config.json'
 import { SocialList } from './SocialList'
-import { HandDrawnAvatar } from './HandDrawnAvatar'
+import { MagicSealAvatar } from './HandDrawnAvatar'
 import { HandDrawnGreeting } from './HandDrawnGreeting'
 ---
 
@@ -23,16 +23,11 @@ import { HandDrawnGreeting } from './HandDrawnGreeting'
           stroke="currentColor"
           stroke-width="2"
           stroke-dasharray="8 4"
-          fill="none"
-        />
+          fill="none"></circle>
       </svg>
 
       <!-- 问候语 -->
-      <HandDrawnGreeting 
-        name={hero.name}
-        bio={hero.bio}
-        client:load
-      />
+      <HandDrawnGreeting name={hero.name} bio={hero.bio} client:load />
 
       <!-- 描述文字 -->
       <div class="relative mt-4 text-sm text-secondary text-center lg:text-left">
@@ -41,12 +36,8 @@ import { HandDrawnGreeting } from './HandDrawnGreeting'
           viewBox="0 0 4 100"
           preserveAspectRatio="none"
         >
-          <path
-            d="M2 0 L2 100"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-dasharray="4 2"
-          />
+          <path d="M2 0 L2 100" stroke="currentColor" stroke-width="2" stroke-dasharray="4 2"
+          ></path>
         </svg>
         {hero.description}
       </div>
@@ -66,16 +57,19 @@ import { HandDrawnGreeting } from './HandDrawnGreeting'
           stroke="currentColor"
           stroke-width="2"
           fill="none"
-          stroke-linejoin="round"
-        />
+          stroke-linejoin="round"></path>
       </svg>
     </div>
 
     <!-- 右侧：头像 -->
     <div class="mt-20 lg:mt-0 relative">
-      <HandDrawnAvatar 
+      <MagicSealAvatar
         src={author.avatar}
-        alt="Site owner avatar"
+        alt={author.name + ' 的头像'}
+        speed={1}
+        ringCount={5}
+        particleCount={34}
+        emberCount={96}
         client:load
       />
     </div>
@@ -94,14 +88,13 @@ import { HandDrawnGreeting } from './HandDrawnGreeting'
             stroke="currentColor"
             stroke-width="1.5"
             stroke-dasharray="6 3"
-            fill="none"
-          />
+            fill="none"></path>
         </svg>
         <p class="text-xs text-center text-balance text-secondary relative px-4">
           {hero.yiyan}
         </p>
       </div>
-      
+
       <!-- 向下滚动提示 -->
       <div class="mt-6 relative">
         <svg
@@ -115,8 +108,7 @@ import { HandDrawnGreeting } from './HandDrawnGreeting'
             stroke="currentColor"
             stroke-width="1.5"
             stroke-dasharray="4 2"
-            fill="none"
-          />
+            fill="none"></circle>
         </svg>
         <div class="text-xl animate-bounce relative">
           <i class="iconfont icon-down text-accent"></i>
