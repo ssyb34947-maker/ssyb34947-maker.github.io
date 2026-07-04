@@ -142,7 +142,7 @@ export function MagicSealAvatar({
           className,
         )}
         aria-label="重新播放头像解封动画"
-        title="点击重新解封"
+        title="restart"
         onClick={() => setAnimationCycle((cycle) => cycle + 1)}
       >
         <motion.div
