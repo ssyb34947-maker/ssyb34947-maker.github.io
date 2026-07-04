@@ -52,7 +52,7 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --unsafe-perm
 
       - name: Build with Astro
         run: pnpm build
