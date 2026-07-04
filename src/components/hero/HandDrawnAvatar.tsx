@@ -208,7 +208,7 @@ export function MagicSealAvatar({
       )}
       style={{ isolation: 'isolate' }}
       aria-label="重新播放头像解封动画"
-      title="点击重新解封"
+      title="restart"
       onClick={() => setAnimationCycle((cycle) => cycle + 1)}
     >
       <div key={animationCycle} className="contents">
@@ -1145,7 +1145,7 @@ export function MagicSealAvatar({
           transition={{ duration: totalDuration, times: [0, 0.88, 1] }}
           aria-hidden="true"
         >
-          点击重启解封
+          restart
         </motion.span>
       </div>
     </button>
