@@ -41,20 +41,7 @@ export function SkillCard({ skill, index }: SkillCardProps) {
         <div className="flex items-center gap-3">
           <span className="text-2xl">{skill.icon}</span>
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-sm truncate">{skill.name}</span>
-              <span
-                className="text-[10px] px-2 py-0.5 rounded-full border"
-                style={{
-                  borderColor: skill.color,
-                  color: skill.color,
-                  backgroundColor: `${skill.color}15`,
-                }}
-              >
-                {skill.level}
-              </span>
-            </div>
-            <p className="text-xs text-secondary mt-1 line-clamp-1">{skill.description}</p>
+            <span className="font-bold text-sm truncate">{skill.name}</span>
           </div>
         </div>
 
