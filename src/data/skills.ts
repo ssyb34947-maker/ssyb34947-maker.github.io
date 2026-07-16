@@ -64,6 +64,7 @@ export const skillCategories: SkillCategory[] = [
       { name: 'MongoDB', icon: '🌿', color: '#47A248' },
       { name: 'Neo4j', icon: '🕸️', color: '#4581C3' },
       { name: 'Spark', icon: '⚡', color: '#E25A1C' },
+      { name: 'Milvus', icon: '🚀', color: '#F05032' },
     ],
   },
 ]
