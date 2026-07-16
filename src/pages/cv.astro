@@ -1,0 +1,603 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { author } from '@/config.json'
+
+const navItems = [
+  { label: 'Home', href: '#home' },
+  { label: 'News', href: '#news' },
+  { label: 'Publications', href: '#publications' },
+  { label: 'Education', href: '#education' },
+  { label: 'Work', href: '#work' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Honors', href: '#honors' },
+]
+
+const news = [
+  {
+    date: '2026.06',
+    text: 'Won First Place university-wide at the 19th SWUFE FinTech Competition.',
+  },
+  {
+    date: '2026.06',
+    text: 'Won the Bronze Medal at the 2026 ICPC & CCPC Chongqing Provincial Programming Contest.',
+  },
+  {
+    date: '2026.04',
+    text: 'Won the National Third Prize / National Top 20 at the 21st Citi Cup Financial Innovation Application Competition.',
+  },
+]
+
+const publications = [
+  {
+    title:
+      'V-Sparse: From Temporal-Spatial Visual Semantic Compression to Coarse-to-Fine Interaction for Text-Video Retrieval',
+    venue: 'Neural Networks, CCF-B Journal',
+    note: 'Co-author contribution.',
+  },
+]
+
+const honors = [
+  {
+    title: '21st Citi Cup Financial Innovation Application Competition',
+    level: 'National Top 20 / National Third Prize',
+  },
+  {
+    title: '2026 ICPC & CCPC Chongqing Provincial Programming Contest',
+    level: 'Bronze Medal',
+  },
+  {
+    title: '19th SWUFE FinTech Competition',
+    level: 'First Place, University-wide',
+  },
+  {
+    title: '11th CCCC-GPLT Group Programming Ladder Contest',
+    level: 'Second Prize, Sichuan Province',
+  },
+  {
+    title: '16th Lanqiao Cup Programming Contest, C++ Group A',
+    level: 'Second Prize, Sichuan Province',
+  },
+  {
+    title: '17th Lanqiao Cup Programming Contest, Python Group A',
+    level: 'Second Prize, Sichuan Province',
+  },
+  {
+    title: '18th China Collegiate Computing Design Competition, Artificial Intelligence Track',
+    level: 'Third Prize, Sichuan Province',
+  },
+  {
+    title: '16th Chinese Mathematics Competitions for College Students',
+    level: 'Second Prize, Sichuan Province',
+  },
+]
+
+const education = [
+  {
+    school: 'Southwestern University of Finance and Economics (SWUFE)',
+    degree: 'B.Eng. in Artificial Intelligence（Intelligent Finance Guanghua Experimental Class）',
+    period: '2023.09 - 2027.06 (expected)',
+    location: 'Chengdu, China',
+    courses:
+      'Knowledge Graph（97）、Data Mining（95）、Matrix Analysis（94）、 Machine Learning (93)、Deep Learning（90）...',
+  },
+]
+
+const workExperience = [
+  {
+    period: '2026.07 - now',
+    company:
+      'Software Development Center, Industrial and Commercial Bank of China (ICBC), Headquarters',
+    role: 'Digital Banking Laboratory, AI Emerging Technology R&D Intern',
+  },
+  {
+    period: '2026.05 - 2026.07',
+    company: 'PowerTech Co., Ltd.',
+    role: 'Quantitative Trading Algorithm Engineer Intern',
+  },
+  {
+    period: '2026.01 - 2026.05',
+    company: 'Chengdu Zhida Technology Co., Ltd.',
+    role: 'AI Application Development Engineer Intern',
+  },
+]
+
+const projects = [
+  {
+    period: '2025.09 - 2026.06',
+    name: 'StableGuard: Stablecoin Digital Resilience Stress Testing Platform Based on Generative AI',
+    role: 'Core System Development & Product Design',
+    result:
+      'Project for the 21st Citi Cup Financial Innovation Application Competition; ranked Top 20 nationally and won the National Third Prize.',
+  },
+  {
+    period: '2026.04 - 2026.06',
+    name: 'SWUFE-Course-KG-Agent',
+    role: 'Project Lead',
+    result:
+      "Key project for SWUFE's 15th Five-Year Plan, under the Graduate School of Southwestern University of Finance and Economics.",
+  },
+  {
+    period: '2026.01 - 2026.04',
+    name: 'Sam College: Full-stack AI Agent Platform for Finance Education',
+    role: 'Project Lead',
+    result: 'Won first place university-wide in the SWUFE FinTech Competition.',
+  },
+]
+---
+
+<Layout title="Yubing Shen | Academic Homepage" description="Yubing Shen 的在线简历">
+  <main id="home" class="academic-home" data-pagefind-body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#home">Yubing Shen</a>
+        <nav aria-label="Academic resume sections">
+          {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+        </nav>
+      </div>
+    </header>
+
+    <div class="page-wrap">
+      <aside class="profile" aria-label="Profile summary">
+        <img src={author.avatar} alt="Yubing Shen profile avatar" />
+        <h1>Yubing Shen</h1>
+        <p class="chinese-name">沈昱兵</p>
+        <p class="role">
+          Undergraduate Student in Artificial Intelligence（Intelligent Finance Guanghua
+          Experimental Class）
+        </p>
+        <p class="summary">Southwestern University of Finance and Economics (SWUFE)</p>
+        <div class="contact-list">
+          <a href="mailto:ssyb34947@gmail.com">ssyb34947@gmail.com</a>
+          <a href="https://github.com/ssyb34947-maker" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="/">Blog</a>
+        </div>
+      </aside>
+
+      <article class="content">
+        <section class="hero-section">
+          <p class="eyebrow">Academic Homepage / Resume</p>
+          <h2>Yubing Shen <span>沈昱兵</span></h2>
+          <p>
+            I am Yubing Shen (沈昱兵), an undergraduate student majoring in Artificial
+            Intelligence（Intelligent Finance Guanghua Experimental Class） at Southwestern
+            University of Finance and Economics (SWUFE).
+          </p>
+        </section>
+
+        <section id="news" class="section-block">
+          <h2>🔥 News</h2>
+          <ul class="news-list">
+            {
+              news.map((item) => (
+                <li>
+                  <span>{item.date}</span>
+                  {item.text}
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section id="publications" class="section-block">
+          <h2>📝 Publications</h2>
+          <div class="entry-list">
+            {
+              publications.map((item) => (
+                <article class="entry">
+                  <h3>{item.title}</h3>
+                  <p class="entry-meta">{item.venue}</p>
+                  <p>{item.note}</p>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
+        <section id="education" class="section-block">
+          <h2>📖 Education</h2>
+          <div class="entry-list">
+            {
+              education.map((item) => (
+                <article class="entry">
+                  <h3>{item.degree}</h3>
+                  <p class="entry-meta">
+                    {item.period}, {item.school}, {item.location}
+                  </p>
+                  <p>
+                    <strong>Key Courses:</strong> {item.courses}
+                  </p>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
+        <section id="work" class="section-block">
+          <h2>💼 Work Experience</h2>
+          <div class="entry-list">
+            {
+              workExperience.map((item) => (
+                <article class="entry timeline-entry">
+                  <time>{item.period}</time>
+                  <div>
+                    <h3>{item.company}</h3>
+                    <p class="entry-meta">{item.role}</p>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
+        <section id="projects" class="section-block">
+          <h2>💻 Projects & Internships</h2>
+          <div class="entry-list">
+            {
+              projects.map((project) => (
+                <article class="entry timeline-entry">
+                  <time>{project.period}</time>
+                  <div>
+                    <h3>{project.name}</h3>
+                    <p class="entry-meta">{project.role}</p>
+                    <p>{project.result}</p>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
+        <section id="honors" class="section-block">
+          <h2>🎖 Honors and Awards</h2>
+          <div class="award-list">
+            {
+              honors.map((item) => (
+                <article class="award-item award-item-compact">
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.level}</p>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(body) {
+    background: #ffffff;
+  }
+
+  .academic-home {
+    min-height: 100vh;
+    background: #ffffff;
+    color: #333333;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .academic-home h1,
+  .academic-home h2,
+  .academic-home h3,
+  .academic-home strong,
+  .brand,
+  .topbar nav,
+  .role,
+  .news-list span,
+  .timeline-entry time,
+  .award-item time,
+  .award-item h3 {
+    font-weight: 700;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid #e5e5e5;
+    background: rgba(255, 255, 255, 0.96);
+  }
+
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 14px 28px;
+  }
+
+  .brand {
+    color: #222222;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .topbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+  }
+
+  .topbar a,
+  .contact-list a,
+  .entry a {
+    color: #1772a0;
+    text-decoration: none;
+  }
+
+  .topbar a:hover,
+  .contact-list a:hover,
+  .entry a:hover {
+    text-decoration: underline;
+  }
+
+  .page-wrap {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 56px;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 54px 28px 80px;
+  }
+
+  .profile {
+    position: sticky;
+    top: 86px;
+    align-self: start;
+    color: #555555;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .profile img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .profile h1 {
+    margin: 22px 0 6px;
+    color: #222222;
+    font-family: 'Lato', sans-serif;
+    font-size: 32px;
+    line-height: 1.15;
+  }
+
+  .chinese-name {
+    margin: 2px 0 8px;
+    color: #555555;
+    font-size: 17px;
+  }
+
+  .role {
+    margin: 0;
+    color: #333333;
+    font-weight: 700;
+  }
+
+  .summary {
+    margin: 14px 0 0;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .content {
+    max-width: 790px;
+  }
+
+  .hero-section {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .eyebrow {
+    margin: 0 0 10px;
+    color: #777777;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-section h2 {
+    margin: 0;
+    color: #222222;
+    font-size: 42px;
+    line-height: 1.15;
+  }
+
+  .hero-section h2 span {
+    color: #555555;
+    font-size: 0.72em;
+    font-weight: 400;
+  }
+
+  .hero-section p {
+    margin: 18px 0 0;
+    color: #444444;
+    font-size: 18px;
+  }
+
+  .section-block {
+    padding: 34px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .section-block h2 {
+    margin: 0 0 18px;
+    color: #222222;
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .entry-list {
+    display: grid;
+    gap: 22px;
+  }
+
+  .entry h3 {
+    margin: 0;
+    color: #222222;
+    font-size: 19px;
+    line-height: 1.35;
+  }
+
+  .entry p {
+    margin: 8px 0 0;
+  }
+
+  .entry-meta {
+    color: #666666;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+  }
+
+  .timeline-entry {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .timeline-entry time {
+    color: #666666;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .detail-list {
+    margin: 8px 0 0;
+    padding-left: 20px;
+  }
+
+  .detail-list li + li {
+    margin-top: 6px;
+  }
+
+  .news-list,
+  .skill-list {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .news-list li + li,
+  .skill-list li + li {
+    margin-top: 8px;
+  }
+
+  .news-list span {
+    display: inline-block;
+    min-width: 104px;
+    color: #666666;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+  }
+
+  .award-list {
+    display: grid;
+    gap: 14px;
+  }
+
+  .award-item {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .award-item-compact {
+    grid-template-columns: 1fr;
+  }
+
+  .award-item time {
+    color: #666666;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .award-item h3 {
+    margin: 0;
+    color: #222222;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .award-item p {
+    margin: 4px 0 0;
+    color: #666666;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+  }
+
+  .skill-list {
+    columns: 2;
+  }
+
+  @media (max-width: 860px) {
+    .topbar-inner {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 10px;
+      padding: 14px 20px;
+    }
+
+    .topbar nav {
+      gap: 12px;
+    }
+
+    .page-wrap {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 36px 20px 64px;
+    }
+
+    .profile {
+      position: static;
+    }
+
+    .profile img {
+      width: 128px;
+      height: 128px;
+    }
+
+    .hero-section h2 {
+      font-size: 34px;
+    }
+
+    .timeline-entry,
+    .award-item {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    .skill-list {
+      columns: 1;
+    }
+  }
+</style>

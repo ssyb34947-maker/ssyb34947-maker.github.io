@@ -74,6 +74,23 @@ export function SocialList({ className }: { className?: string }) {
           </motion.li>
         )
       })}
+      <motion.li variants={itemVariants}>
+        <a
+          className="group relative flex size-9 items-center justify-center text-xl text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          href="/cv"
+          title="Academic CV"
+          aria-label="查看学术简历"
+        >
+          <span
+            className="absolute inset-0 -z-1 rounded-full bg-zinc-800 transition-transform group-hover:scale-105 dark:bg-zinc-100"
+            aria-hidden="true"
+          />
+          <i
+            className="iconfont icon-contacts-book text-white dark:text-zinc-900"
+            aria-hidden="true"
+          />
+        </a>
+      </motion.li>
     </motion.ul>
   )
 }
