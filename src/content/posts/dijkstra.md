@@ -6,7 +6,7 @@ category: 数据结构
 tags: [data-structure]
 ---
 
-## dijkstra算法是做什么的
+# Dijkstra算法是做什么的
 
 在一张图上，找单点到其他所有点的最小距离。
 
